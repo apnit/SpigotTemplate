@@ -6,12 +6,17 @@ Spigot server configuration template.
 1. Download the latest release from [here](https://github.com/alirezaopmc/spigot-server-starter/releases/tag/0.0.2) and extract the zip file into a new folder.
 2. Get spigot jar file from [here](https://getbukkit.org/)(for begginers) or download it using [BuildTools](https://www.spigotmc.org/wiki/buildtools/)(if you are familiar with terminal commands you have pasion)
 2. Put the jar file in the the folder containing the extracted files.
-3. Edit the `run.bat` file according to the downloaded jar file.
+3. Edit the `start.bat` (or `start.sh` in linux) file according to the downloaded jar file.
 ```bash
 @echo off
 title Server Console
-java -Xmx1G -jar <jar-file-name>.jar
+java -Xmx1G -jar <jar-file-name>.jar nogui
 PAUSE
+```
+```bash
+#!/bin/sh
+
+java -Xms4G -Xmx4G -XX:+UseG1GC -jar "spigot-1.18.2.jar" nogui
 ```
 Note that if you are using Spigot 1.18.1, you don't need to edit this file.
 
